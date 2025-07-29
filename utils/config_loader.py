@@ -10,4 +10,7 @@ def load_config(config_path: str = None):
         raise FileNotFoundError(f"Config file not found: {config_path}")
     
     with open(config_path, 'r')  as file:
-        return yaml.safe_load(file)
+        config =  yaml.safe_load(file)
+        if config is None:
+            raise ValueError(f"Config file {config_path} is empty or invalid")
+        return config
