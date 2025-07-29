@@ -1,6 +1,7 @@
 import os
 import yaml
 
+
 #function to load the configurations
 def load_config(config_path: str = None):
     if config_path is None:
